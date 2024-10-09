@@ -1,0 +1,26 @@
+name = "payment-processing"
+main = "src/index.ts"
+compatibility_date = "2024-10-04"
+
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "PAYMENT_KV"
+id = "5a4701543aca4b03a8dc62f3a2c5d342"
+
+[env.dev]
+vars.SUBSCRIPTION_WORKER_URL = "http://localhost:8787/api/v0.1"
+vars.INVOICE_WORKER_URL = "http://localhost:34889/api/v0.1"
+vars.NOTIFICATION_WORKER_URL = "http://localhost:33523/api/v0.1"
+kv_namespaces = [
+    { binding = "PAYMENT_KV", id = "5a4701543aca4b03a8dc62f3a2c5d342" },
+]
+
+[env.production]
+vars.SUBSCRIPTION_WORKER_URL = "http://subscription.azam-arid1144.workers.dev/api/v0.1"
+vars.INVOICE_WORKER_URL = "http://billing-engine.azam-arid1144.workers.dev/api/v0.1"
+vars.NOTIFICATION_WORKER_URL = "http://notification.azam-arid1144.workers.dev/api/v0.1"
+kv_namespaces = [
+    { binding = "PAYMENT_KV", id = "5a4701543aca4b03a8dc62f3a2c5d342" },
+]
