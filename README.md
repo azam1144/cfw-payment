@@ -13,7 +13,7 @@ The Payment Worker manages the payment processing for customer subscriptions. It
 
 1. Clone the repository:
    ```bash  
-   git clone <REPOSITORY_URL>  
+   git clone https://github.com/azam1144/cfw-payment.git  
    cd subscription  
 
 2. Install dependencies:
